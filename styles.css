@@ -124,7 +124,7 @@ nav ul li a:hover {
 }
 
 .kynning-eg img {
-    width: 400px;
+    width: 300px;
     border-radius: 15px;
 }
 
@@ -137,7 +137,7 @@ nav ul li a:hover {
 .project {
     display: block;
     width: 100%;
-    margin: 40px 0;
+    margin: 20px 0;
     text-align: center;
    
 }
@@ -150,8 +150,8 @@ nav ul li a:hover {
 
 .project .image-container {
     position: relative;
-    width: 100%;
-    height: 400px;
+    width: 90%;
+    height: 300px;
     overflow: hidden;
 }
 
