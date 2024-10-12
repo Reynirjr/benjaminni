@@ -528,8 +528,8 @@ nav ul li a:hover {
     flex-direction: row;
     position: absolute;
     top: 20%;
-    left: 10%;
-    width: 50vw;
+    left: 15%;
+    width: 60vw;
     height: 50vh;
 }
 
@@ -558,7 +558,6 @@ nav ul li a:hover {
         position: relative;
         width: 90%;
         height: 30vh;
-        width: 15vw;
         overflow: hidden;
     }
     
