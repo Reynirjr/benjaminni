@@ -21,7 +21,7 @@
     /* Fonts */
     --font-size-base: 16px;
     --heading-font: 'Arial', sans-serif;
-    --body-font: 'Poppins', sans-serif;
+    --body-font: 'Arial', sans-serif;
     --h1-font: 'MAROLA', sans-serif;
 
     /* Other */
@@ -40,12 +40,6 @@
     src: url(fonts/MAROLA__.TTF) format('woff2');
 }
 
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 100 900;
-    src: url(fonts/Poppins/Poppins-VariableFont_wght.ttf) format('woff2');
-}
 
 html {
     font-size: var(--font-size-base);
@@ -67,14 +61,7 @@ h3,
 legend {
     font-family: var(--heading-font);
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px;
-}
+
 body {
     display: flex;
     flex-direction: column;
@@ -102,6 +89,14 @@ header h1 {
     }
     100% {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes comeInDown {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100% {
         transform: translateY(0);
     }
 }
@@ -139,51 +134,19 @@ nav ul li a:hover {
     
 }
 
-.eg-og-reynsla {
-    border-radius: 15px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.eg-og-reynsla::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/path-to-your/noise.png');
-    background-size: 1px 1px;
-    opacity: 1; /* Lower opacity for more subtle effect */
-    pointer-events: none; /* Prevent interaction */
-    mix-blend-mode: overlay;
-}
-
-.kynning-eg {
+.mynd-eg{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+
 }
-.kynning-eg h2 {
-    font-size: 3em;
-    color: var(--primary-text-color);
-    margin: 10px 0;
-    text-align: center;
+.mynd-eg img{
+    overflow: hidden;
+    animation: comeInDown 3s ease-in-out;
 }
 
 
-.kynning-eg img {
-    width: 400px;
-    max-width: 100%;
-}
 
-.kynning-eg p {
-    font-size: 1em;
-    text-align: center;
-}
 .verkefni a{
     text-decoration: none;
     display: flex;
@@ -196,7 +159,7 @@ nav ul li a:hover {
 .project {
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 20px auto;
     text-align: center;
    
@@ -210,7 +173,7 @@ nav ul li a:hover {
 
 .project .image-container {
     position: relative;
-    width: 90%;
+    width: 100%;
     height: 300px;
     overflow: hidden;
 }
@@ -251,91 +214,7 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
-/* Responsive Design */
-@media(min-width: 500px){
-    .project {
-        display: block;
-        width: 100%;
-        margin: 40px 0;
-        text-align: center;
-       
-    }
-    .project .image-container {
-        position: relative;
-        width: 100%;
-        height: 600px;
-        overflow: hidden;
-    }
-    
-}
 
-@media(min-width: 768px){
-    .project {
-        display: inline-block;
-        width: 30%;
-        margin: 1%;
-        text-align: center;
-        vertical-align: top;
-    }
-    
-    .project h3 {
-        font-size: var(--font-size-md);
-        color: var(--heading-color);
-        margin: 10px 0;
-    }
-    
-    .project .image-container {
-        position: relative;
-        width: 100%;
-        max-height: 30vh;
-    }
-    
-    .project .image-container img {
-        width: 100%;
-        height: auto;
-        border-radius: var(--border-radius);
-    }
-    
-    .project .static-img {
-        display: block;
-    }
-    
-    .project .animated-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-    }
-    
-    .project:hover .static-img {
-        display: none;
-    }
-    
-    .project:hover .animated-img {
-        display: block;
-    }
-    
-    .project p {
-        font-size: var(--font-size-sm);
-        color: var(--primary-text-color);
-        margin-top: 10px;
-    }
-    
-}
-
-
-
-.sections {
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.sections h2,
 .verkefni h2 {
     margin-top: 20px;
     font-size: 3em;
@@ -343,16 +222,6 @@ nav ul li a:hover {
     color: var(--primary-text-color);
 }
 
-.sections li {
-    list-style-type: none;
-    text-align: center;
-    line-height: 2;
-    font-size: 1.5em;
-    margin-right: 20px;
-}
-.sections li strong{
-    font-size: 1.2em;
-}
 
 button {
     background-color: var(--button-bg-color);
@@ -373,15 +242,15 @@ button:hover {
 
 
 footer {
-    background-color: var(--nav-bg-color);
-    color: white;
+    background: radial-gradient( #00BFFF, #009ACD, #1E90FF);
+    color: #ffffff;
     padding: 20px;
     text-align: center;
     width: 100%;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: #ffc107;
     font-family: var(--heading-font);
 }
 
@@ -415,171 +284,64 @@ footer a:hover {
     bottom: 0;
     z-index: -1;
 }
-@media(min-width: 1100px){
 
-body {
-    display: flex;
-    flex-direction: row;
-    background: radial-gradient(circle at top, var(--primary-bg-color) 30%, var(--secondary-bg-color) 70%);
-    color: var(--primary-text-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    overflow-x: hidden;
-    justify-content: center;
-}
+
+
+@media(min-width: 500px){
+    .project {
+        display: block;
+        width: 100%;
+        margin: 40px 0;
+        text-align: center;
+       
+    }
+    .project .image-container {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+    }
     
-header h1 {
-    font-size: var(--font-size-lg);
-    color: var(--heading-color);
-    text-align: center;
-    animation: fadeInDown 3s ease-in-out;
 }
+
+@media(min-width: 768px){
+    .project {
+        display: inline-block;
+        width: 30%;
+        margin: 1%;
+        text-align: center;
+        vertical-align: top;
+    }
     
-nav ul {
-    display: none;
-}
-    
-nav ul li a {
-   display: none;
-}
-    
-nav ul li a:hover {
-    display: none;
-}
-.hello{
-    position: absolute;
-    top: 10px;
-    right: 30%;
-}
-
-.eg-og-reynsla {
-    background: none;
-    border-radius: 15px;
-    position: absolute;
-    top: 12%;
-    right: 2%;
-    overflow: hidden;
-    max-height: 80vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 65vh;
-    width: 60vw;
-
-}
-    
-.eg-og-reynsla::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/path-to-your/noise.png');
-    background-size: 1px 1px;
-    opacity: 1; /* Lower opacity for more subtle effect */
-    pointer-events: none; /* Prevent interaction */
-    mix-blend-mode: overlay;
-}
-.eg{
-    width: 12vw;
-}
-    
-
-.kynning-eg img {
-    width: 25vw;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: absolute;
-    top: -16%;
-    right: 0;
-}
-    
-
-.sections {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 0;
-}
-
-.verkefni h2 {
-    display: none;
-}
-
-.sections li {
-    list-style-type: none;
-    text-align: left;
-    line-height: 1;
-    font-size: 1vw;
-    margin-right: 0;
-}
-.sections li strong{
-    font-size: 1vw;
-}
-
-.verkefni{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 20%;
-    left: 15%;
-    width: 60vw;
-    height: 50vh;
-}
-
-.verkefni a{
-        text-decoration: none;
-        align-items: center; 
-        width: 100%; 
-        padding: 0; 
-        margin: 0 auto;
-}
-
-
-.project {
-    width: 100%;
-    max-width: 60vw;
-    margin: 20px auto;
-}
-    
-.project h3 {
-    font-size:2em;
-        color: var(--accent-color);
+    .project h3 {
+        font-size: var(--font-size-md);
+        color: var(--heading-color);
         margin: 10px 0;
     }
     
     .project .image-container {
         position: relative;
-        width: 90%;
-        height: 30vh;
-        overflow: hidden;
+        width: 100%;
+        height: 50vh;
+        max-height: 50vh;
+        margin-bottom: 20px;
     }
     
     .project .image-container img {
         width: 100%;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
+        height: auto;
         border-radius: var(--border-radius);
+
     }
     
     .project .static-img {
         display: block;
-    
     }
     
     .project .animated-img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         display: none;
     }
     
@@ -597,8 +359,142 @@ nav ul li a:hover {
         margin-top: 10px;
     }
     
+}
 
 
+
+@media(min-width: 1100px){
+
+body {
+    background: radial-gradient(circle at top, var(--primary-bg-color) 30%, var(--secondary-bg-color) 70%);
+    color: var(--primary-text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+    
+header h1 {
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    justify-content: center;
+    text-align: center; 
+    font-size: var(--font-size-lg);
+    color: var(--heading-color);
+    animation: fadeInDown 3s ease-in-out;
+}
+    
+nav ul {
+    display: none;
+}
+    
+nav ul li a {
+   display: none;
+}
+    
+nav ul li a:hover {
+    display: none;
+}
+
+.mynd-eg{  
+    position: absolute;
+    top: 20%;
+    right: 5%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mynd-eg img{
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    animation: comeInDown 3s ease-in-out;
+}
+
+
+
+.verkefni{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 50vh;
+}
+
+.verkefni h2 {
+    display: none;
+}
+
+.verkefni a{
+    text-decoration: none;
+    align-items: center; 
+    width: 100%; 
+    padding: 0; 
+    margin: 0 auto;
+}
+
+
+.project {
+    width: 100%;
+    max-width: 60vw;
+    margin: 20px auto;
+}
+    
+.project h3 {
+    font-size:2em;
+    color: var(--accent-color);
+    margin: 10px 0;
+}
+    
+.project .image-container {
+    position: relative;
+    width: 90%;
+    height: 30vh;
+    overflow: hidden;
+}
+    
+.project .image-container img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+    
+.project .static-img {
+    display: block;
+}
+    
+.project .animated-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+    
+.project:hover .static-img {
+    display: none;
+}
+    
+.project:hover .animated-img {
+    display: block;
+}
+    
+.project p {
+    font-size: var(--font-size-sm);
+    color: var(--primary-text-color);
+    margin-top: 10px;
+}
+    
 button {
     background-color: var(--button-bg-color);
     color: white;
@@ -622,7 +518,7 @@ footer {
     bottom: 0;
     right: 0;
     background: radial-gradient( #00BFFF, #009ACD, #1E90FF);
-    color: white;
+    color: #ffffff;
     padding: 0;
     width: 100%;
 }
@@ -662,14 +558,21 @@ footer a:hover {
     transform: scale(1.1);
 }
 
-
 #background-wrap {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: -100;
+}
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
 }
 }
 
@@ -692,9 +595,11 @@ footer a:hover {
 }
 
 
+
+
 @keyframes animateCloud {
     0% {
-        margin-left: -1000px;
+        margin-left: -500px;
     }
     100% {
         margin-left: 100%;
