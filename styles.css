@@ -229,6 +229,7 @@ nav ul li a:hover {
     display: none;
 }
 
+@media(hover: hover){
 .project:hover .static-img {
     display: none;
 }
@@ -236,8 +237,7 @@ nav ul li a:hover {
 .project:hover .animated-img {
     display: block;
 }
-
-
+}
 
 .verkefni h2 {
     margin-top: 20px;
