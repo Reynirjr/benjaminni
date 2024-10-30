@@ -31,33 +31,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const projects = document.querySelectorAll('.project');
+    if (window.matchMedia('(hover: none)').matches) {
+        const projects = document.querySelectorAll('.project');
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 1
-    };
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1
+        };
 
-    const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-            const staticImg = entry.target.querySelector('.static-img');
-            const animatedImg = entry.target.querySelector('.animated-img');
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                const staticImg = entry.target.querySelector('.static-img');
+                const animatedImg = entry.target.querySelector('.animated-img');
 
-            if (entry.isIntersecting) {
-                if(staticImg)staticImg.style.display = 'none';
-                if(animatedImg)animatedImg.style.display = 'block';
-            }else{
-                if(staticImg)staticImg.style.display = 'block';
-                if(animatedImg)animatedImg.style.display = 'none';
-            }
+                if (entry.isIntersecting) {
+                    if(staticImg) staticImg.style.display = 'none';
+                    if(animatedImg) animatedImg.style.display = 'block';
+                } else {
+                    if(staticImg) staticImg.style.display = 'block';
+                    if(animatedImg) animatedImg.style.display = 'none';
+                }
+            });
+        }, observerOptions);
+
+        projects.forEach(function (project) {
+            observer.observe(project);
         });
-    }, observerOptions);
-
-    projects.forEach(function (project) {
-        observer.observe(project);
-    });
+    }
 });
+
 
 
 
