@@ -229,15 +229,7 @@ nav ul li a:hover {
     display: none;
 }
 
-.project .static-img{
-    display: block;
-}
-
-.project .animated-img{
-    display: none;
-}
-
-@media(max-width: 500){
+@media(hover: hover){
 .project:hover .static-img {
     display: none;
 }
