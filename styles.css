@@ -1,4 +1,3 @@
-/* reset*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,25 +5,22 @@
 }
 
 :root {
-    /* Colors */
-    --primary-bg-color: #addbee; /* Sky Blue */
-    --secondary-bg-color: #00BFFF; /* Deep Sky Blue */
-    --primary-text-color: #333333; /* Dark Charcoal */
-    --heading-color: #ffffff; /* White */
+    --primary-bg-color: #addbee;
+    --secondary-bg-color: #00BFFF;
+    --primary-text-color: #333333;
+    --heading-color: #ffffff;
     --accent-color: #ffd900; 
-    --button-bg-color: #FFD700; /* Gold */
-    --button-hover-bg-color: #FFA500; /* Orange */
-    --nav-bg-color: #1E90FF; /* Dodger Blue */
-    --link-hover-color: #ff5e00; /* Orange */
-    --section-card-bg: #ADD8E6; /* Light Blue */
+    --button-bg-color: #FFD700;
+    --button-hover-bg-color: #FFA500;
+    --nav-bg-color: #1E90FF;
+    --link-hover-color: #ff5e00;
+    --section-card-bg: #ADD8E6;
 
-    /* Fonts */
     --font-size-base: 16px;
     --heading-font: 'Windsor Elongated', sans-serif;
     --body-font: 'Windsor', sans-serif;
     --h1-font: 'MAROLA', sans-serif;
 
-    /* Other */
     --border-radius: 10px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --transition-duration: 0.3s;
@@ -113,6 +109,7 @@ header h1 {
         transform: translateY(0);
     }
 }
+
 @keyframes wiggleWiggle{
     0% {
         transform: rotate(0deg);
@@ -166,11 +163,11 @@ nav ul li a:hover {
 
 .mynd-eg{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 .mynd-eg img{
-    overflow: hidden;
+    max-width: 100%;
     animation: comeInDown 3s ease-in-out, wiggleWiggle  2s infinite ease-in-out 3s;
 }
 
@@ -182,6 +179,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center; 
     width: 100%; 
+    height: 100%;
     padding: 0; 
     margin: 0 auto;
 }
@@ -202,8 +200,8 @@ nav ul li a:hover {
 
 .project .image-container {
     position: relative;
-    width: 70vw;
-    height: 30vh;
+    width: 60vw;
+    height: 60vw;
     overflow: hidden;
 }
 
@@ -312,24 +310,18 @@ footer a:hover {
 
 
 
-@media(min-width: 500px){
-    .project {
-        display: block;
-        width: 100%;
-        margin: 40px 0;
-        text-align: center;
-       
-    }
-    .project .image-container {
-        position: relative;
-        width: 100%;
-        height: 40vh;
-        overflow: hidden;
-    }
-    
-}
+
 
 @media(min-width: 768px){
+    .mynd-eg img{
+        max-width: 100%;
+        width: 30vw;
+        height: auto;
+        overflow: hidden;
+        animation: comeInDown 3s ease-in-out, wiggleWiggle  2s infinite ease-in-out 3s;
+    }
+
+
     .project {
         display: inline-block;
         width: 30%;
@@ -348,19 +340,21 @@ footer a:hover {
         position: relative;
         width: 100%;
         height: 50vh;
+        height: 50vh;
         max-height: 50vh;
-        margin-bottom: 20px;
     }
     
     .project .image-container img {
         width: 100%;
+        height: 100%;
         height: auto;
-        border-radius: var(--border-radius);
+        border-radius: 0;
 
     }
     
     .project .static-img {
         display: block;
+        
     }
     
     .project .animated-img {
@@ -428,14 +422,15 @@ nav ul li a:hover {
 
 .mynd-eg{  
     position: absolute;
-    top: 20%;
-    right: 5%; 
+    top: 25%;
+    right: 3%; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .mynd-eg img{
     max-width: 100%;
+    width: 20vw;
     height: auto;
     overflow: hidden;
     animation: comeInDown 3s ease-in-out, wiggleWiggle  2s infinite ease-in-out 3s;
