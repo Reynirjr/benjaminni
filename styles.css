@@ -168,6 +168,7 @@ nav ul li a:hover {
 }
 .mynd-eg img{
     max-width: 100%;
+    width: 60vw;
     animation: comeInDown 3s ease-in-out, wiggleWiggle  2s infinite ease-in-out 3s;
 }
 
