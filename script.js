@@ -61,6 +61,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const myImage = document.querySelector('.mynd-eg img');
+    
+    if (myImage) {
+        myImage.addEventListener('click', function() {
+            this.style.animation = 'spinAround 1s ease-in-out';
+            
+            setTimeout(() => {
+                this.style.animation = 'wiggleWiggle 2s infinite ease-in-out';
+            }, 1000); 
+        });
+    }
+});
+
 
 
 
